@@ -1,0 +1,7 @@
+{
+  "name": "ocultoStudio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
