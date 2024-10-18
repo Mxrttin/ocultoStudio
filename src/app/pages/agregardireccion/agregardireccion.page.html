@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+    <ion-card-title class="ion-text-center" color="light">
+      Ingrese datos de su direccion
+    </ion-card-title>
+    <hr>
+    <br>
+    <ion-card-content>
+
+      <ion-item>
+        <ion-select label="Comuna" placeholder="Seleccione una Comuna" [(ngModel)]="comuna" >
+          <ion-select-option value="Polera" color="light">Polera</ion-select-option>
+          <ion-select-option value="Poleron" color="light">Poleron</ion-select-option>
+          <ion-select-option value="Falda" color="light">Falda</ion-select-option>
+          <ion-select-option value="Short" color="light">Short</ion-select-option>
+          <ion-select-option value="Pantalon" color="light">Pantalon</ion-select-option>
+          <ion-select-option value="Camisa" color="light">Camisa</ion-select-option>
+          <ion-select-option value="Otros" color="light">Otros</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-select label="Region" placeholder="Seleccione una Region" [(ngModel)]="region" >
+          <ion-select-option value="Polera" color="light">Polera</ion-select-option>
+          <ion-select-option value="Poleron" color="light">Poleron</ion-select-option>
+          <ion-select-option value="Falda" color="light">Falda</ion-select-option>
+          <ion-select-option value="Short" color="light">Short</ion-select-option>
+          <ion-select-option value="Pantalon" color="light">Pantalon</ion-select-option>
+          <ion-select-option value="Camisa" color="light">Camisa</ion-select-option>
+          <ion-select-option value="Otros" color="light">Otros</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Nombre del cliente" labelPlacement="floating" placeholder=""  [(ngModel)]="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Direccion de su domicilio" labelPlacement="floating" placeholder=""  [(ngModel)]="descripcion"></ion-input>
+      </ion-item>
+      <br>
+      <div class="boton">
+          <ion-button expand="block" color="tertiary" (click)="guardar()"> Guardar</ion-button>
+      </div>
+
+
+    </ion-card-content>
+
+  </ion-card>
+
+  
+
+</ion-content>

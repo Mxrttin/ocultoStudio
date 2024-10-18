@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Carrito de Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Producto en el Carrito</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <table>
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Nombre</th>
+                  <th>Size</th>
+                  <th>Cantidad</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img src={{item.cover}} alt=""></td>
+                  <td>{{ item.name }}</td>
+                  <th>{{item.Size}}</th>
+                  <td>{{ item.cantidad }}</td>
+                  <td>{{ item.total | currency }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <ion-footer>
+              <div class="total">
+                <h4>Total del Carrito: {{ calcularTotalCarrito() | currency }}</h4>
+              </div>
+              <ion-button expand="full" color="tertiary" (click)="pagar()">Pagar</ion-button>
+            </ion-footer>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>detallepedido</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let pedido of pedidos">
+    <img alt="Silhouette of mountains" src="{{pedido.producto}}" />
+    
+    <ion-card-header>
+      <ion-label>{{pedido.nombre}}</ion-label>
+      <ion-label>Talla: {{pedido.talla}}</ion-label>
+      <ion-label>Cliente: {{pedido.cliente}}</ion-label>
+      <ion-label>Cantidad: {{pedido.cantidad}}</ion-label>
+      <ion-label>Precio: {{pedido.precio}}</ion-label>
+      <ion-label>Estado: {{pedido.estado}}</ion-label>
+    </ion-card-header>
+
+  </ion-card>
+
+</ion-content>

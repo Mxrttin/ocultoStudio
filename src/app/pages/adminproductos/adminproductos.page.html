@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>OcultoProductos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeXs="6" *ngFor="let item of arregloProductos">
+          <ion-card  >
+            <img alt="Silhouette of mountains" src="{{item.foto}}" />
+            <ion-card-header class="ion-text-center">
+              <ion-card-title color="light" >{{item.nombre}}</ion-card-title>
+              <ion-card-subtitle color="light">{{item.descripcion}}</ion-card-subtitle>
+            </ion-card-header>  
+            <ion-card-content class="ion-text-center" color="light">
+              <b color="light">$</b>{{item.precio}}
+            </ion-card-content>
+
+            <ion-fab horizontal="end" vertical="top" class="editar">
+              <ion-fab-button  color="tertiary" class="small-fab" (click)="modificar(item)">
+                <ion-icon name="pencil-outline" class="icon-top-right"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+
+            <ion-button color="tertiary" (click)="eliminar(item)">
+              <ion-icon name="trash" color="light"></ion-icon>
+            </ion-button>
+
+
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button [routerLink]="'/agregarproductos'" color="tertiary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!-- <ion-fab horizontal="start" vertical="bottom" slot="fixed">
+    <ion-fab-button [routerLink]="'/editarproductos'" color="tertiary">
+      <ion-icon name="pencil-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+</ion-content>
